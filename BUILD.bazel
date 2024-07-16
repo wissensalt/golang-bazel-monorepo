@@ -1,0 +1,24 @@
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix github.com/wissensalt/golang-bazel-monorepo
+gazelle(name = "gazelle")
+
+gazelle(
+    name = "gazelle-update-repo-app-one",
+    args = [
+        "-from_file=./apps/app-one/go.mod",
+        "-to_macro=deps.bzl%go_dependencies",
+        "-prune",
+    ],
+    command = "update-repos",
+)
+
+gazelle(
+    name = "gazelle-update-repo-app-two",
+    args = [
+        "-from_file=./apps/app-two/go.mod",
+        "-to_macro=deps.bzl%go_dependencies",
+        "-prune",
+    ],
+    command = "update-repos",
+)

@@ -1,0 +1,22 @@
+#IDE config ignore
+.idea/
+.vscode/*
+.DS_Store
+.ijwb/*
+genhtml/*
+
+bin
+cmd/*bin
+.cache
+coverprofile.out
+
+application.yml
+secret.yml
+config.yml
+
+data
+dump
+
+__debug_bin*
+
+bazel-*
