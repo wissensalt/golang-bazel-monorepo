@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/go-chi/cors"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
@@ -21,10 +22,20 @@ import (
 //	@license.name	Apache 2.0
 //	@license.url	http://www.apache.org/licenses/LICENSE-2.0.html
 
-// @host		localhost:8080
+// @host		localhost:8081
 // @BasePath	/
 func main() {
 	r := chi.NewRouter()
+	// Configure CORS
+	corsOptions := cors.Options{
+		AllowedOrigins:   []string{"http://localhost:5173"}, // Update with your React app's origin
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
+		ExposedHeaders:   []string{"Link"},
+		AllowCredentials: true,
+		MaxAge:           300, // Maximum value not ignored by any of major browsers
+	}
+	r.Use(cors.Handler(corsOptions))
 
 	r.Get("/", hello)
 
@@ -38,7 +49,7 @@ func main() {
 	http.ListenAndServe(":8081", r)
 }
 
-// @Summary		Hello endpoint
+// @Summary		Hello endpoint FROM APP TWO
 // @Description	This endpoint returns a hello world message from APP TWO
 // @Accept			json
 // @Produce		json

@@ -8,6 +8,7 @@ go_library(
     deps = [
         "//apps/app-one/docs",
         "@com_github_go_chi_chi_v5//:chi",
+        "@com_github_go_chi_cors//:cors",
         "@com_github_swaggo_http_swagger//:http-swagger",
     ],
 )

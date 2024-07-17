@@ -51,6 +51,13 @@ bazel run //:gazelle-update-repo-one
 bazel build //...
 ```
 
+## Run Swagger
+```bash
+  cd apps/swagger
+  yarn dev
+```
+![swagger.png](screenshots%2Fswagger.png)
+
 ## Issues
 If you find any issue, and it is taking too much time to resolve, run following command to clean all bazel generated files and caches
 ```bash

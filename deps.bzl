@@ -20,6 +20,12 @@ def go_dependencies():
         version = "v5.1.0",
     )
     go_repository(
+        name = "com_github_go_chi_cors",
+        importpath = "github.com/go-chi/cors",
+        sum = "h1:xEC8UT3Rlp2QuWNEr4Fs/c2EAGVKBwy/1vHx3bppil4=",
+        version = "v1.2.1",
+    )
+    go_repository(
         name = "com_github_go_openapi_jsonpointer",
         importpath = "github.com/go-openapi/jsonpointer",
         sum = "h1:YgdVicSA9vH5RiHs9TZW5oyafXZFc6+2Vc1rr/O9oNQ=",
