@@ -5,7 +5,11 @@ go_library(
     srcs = ["main.go"],
     importpath = "github.com/wissensalt/golang-bazel-monorepo/apps/app-two",
     visibility = ["//visibility:private"],
-    deps = ["@com_github_go_chi_chi_v5//:chi"],
+    deps = [
+        "//apps/app-two/docs",
+        "@com_github_go_chi_chi_v5//:chi",
+        "@com_github_swaggo_http_swagger//:http-swagger",
+    ],
 )
 
 go_binary(
